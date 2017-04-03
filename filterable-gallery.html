@@ -61,7 +61,7 @@
 
       disconnectedCallback() {
         super.disconnectedCallback()
-        this.addEventListener('click')
+        this.removeEventListener('click')
       }
 
       filterItems(filter) {
