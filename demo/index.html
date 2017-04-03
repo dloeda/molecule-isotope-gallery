@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>filterable-gallery demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../../iron-image/iron-image.html">
+    <link rel="import" href="../../paper-button/paper-button.html">
+    <link rel="import" href="../filterable-gallery.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+  </head>
+  <body>
+    <style>
+      .tags {
+        display: flex;
+        justify-content: center;
+      }
+
+      iron-image {
+        margin: 5px;
+        width: 30%;
+        height: 20vh;
+      }
+
+      iron-image.large {
+        width: calc(60% + 10px);
+      }
+
+      iron-image.tall {
+        height: calc(60vh + 20px);
+      }
+
+      @media only screen and (max-width: 500px) {
+        iron-image {
+          width: 100%;
+        }
+
+        iron-image.large {
+          width: 100%;
+        }
+      }
+    </style>
+    <div class="vertical-section-container centered">
+      <h3>Basic filterable-gallery demo</h3>
+      <demo-snippet>
+        <template>
+          <filterable-gallery default-filter="mountain">
+            <div class="tags">
+              <paper-button data-filter="item">All</paper-button>
+              <paper-button data-filter="sports">Sports</paper-button>
+              <paper-button data-filter="mountain">Mountain</paper-button>
+            </div>
+            <div class="grid">
+              <iron-image src="images/mountain1.jpg" sizing="cover" class="item mountain"></iron-image>
+              <iron-image src="images/mountain2.jpg"  sizing="cover" class="item mountain tall"></iron-image>
+              <iron-image src="images/sports1.jpg" sizing="cover" class="item sports"></iron-image>
+              <iron-image src="images/mountain3.jpg" sizing="cover" class="item mountain"></iron-image>
+              <iron-image src="images/mountain4.jpg" sizing="cover" class="item mountain"></iron-image>
+              <iron-image src="images/sports3.jpg" sizing="cover" class="item sports"></iron-image>
+              <iron-image src="images/mountain5.jpg" sizing="cover" class="item mountain"></iron-image>
+              <iron-image src="images/sports2.jpg"  sizing="cover" class="item sports large"></iron-image>
+              <iron-image src="images/mountain6.jpg" sizing="cover" class="item mountain"></iron-image>
+              <iron-image src="images/sports4.jpg" sizing="cover" class="item sports"></iron-image>
+              <iron-image src="images/sports5.jpg" sizing="cover" class="item sports"></iron-image>
+            </div>
+          </filterable-gallery>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>
