@@ -1,6 +1,7 @@
 {
   "name": "molecule-isotope-gallery",
   "main": "molecule-isotope-gallery.html",
+  "version": "0.1.0",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0-rc.2"
   },
