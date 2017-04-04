@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>molecule-isotope-gallery test</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../test-fixture/test-fixture-mocha.js"></script>
+
+    <link rel="import" href="../molecule-isotope-gallery.html">
+  </head>
+  <body>
+    <test-fixture id="basic">
+      <template>
+        <molecule-isotope-gallery></molecule-isotope-gallery>
+      </template>
+    </test-fixture>
+
+    <script>
+      var element
+      suite('molecule-isotope-gallery', () => {
+        suite('Basic behavior', () => {
+          suiteSetup(() =>
+            element = fixture('basic')
+          )
+          suite('properties has default value', () => {
+              test('itemClass', () => {
+                expect(element.itemClass).to.be.equal('item')
+              });
+              test('defaultFilter', () => {
+                expect(element.defaultFilter).to.be.not.defined
+              });
+              test('itemClass', () => {
+                expect(element.tagAttribute).to.be.equal('data-filter')
+              });
+              test('itemClass', () => {
+                expect(element.filter).to.be.defined
+              });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

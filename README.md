@@ -1,4 +1,4 @@
-# \<filterable-gallery\>
+# \<molecule-isotope-gallery\>
 
 
 

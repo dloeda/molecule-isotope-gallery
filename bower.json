@@ -1,6 +1,6 @@
 {
-  "name": "filterable-gallery",
-  "main": "filterable-gallery.html",
+  "name": "molecule-isotope-gallery",
+  "main": "molecule-isotope-gallery.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0-rc.2"
   },
@@ -9,7 +9,7 @@
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#2.0-preview",
     "web-component-tester": "v6.0.0-prerelease.5",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0-rc.5",
-    "iron-image": "PolymerElements/iron-image#^1.2.5"
+    "iron-image": "PolymerElements/iron-image#2.0-preview"
   },
   "resolutions": {
     "polymer": "^2.0.0-rc.2",
@@ -24,6 +24,18 @@
     "iron-form-element-behavior": "^1.0.0",
     "iron-validatable-behavior": "^1.0.0",
     "iron-a11y-keys-behavior": "^1.1.5",
-    "iron-meta": "^1.0.0"
+    "iron-meta": "^1.0.0",
+    "hydrolysis": "^1.18",
+    "iron-ajax": "^1.0.0",
+    "iron-doc-viewer": "^1.0.1",
+    "marked-element": "^1.0.0",
+    "iron-icons": "^1.0.0",
+    "iron-icon": "^1.0.0",
+    "iron-iconset-svg": "^1.0.0",
+    "iron-selector": "^1.0.0",
+    "prism-element": "^1.0.2",
+    "iron-location": "^0.8.0",
+    "mocha": "^3.1.2",
+    "test-fixture": "^2.0.0"
   }
 }
