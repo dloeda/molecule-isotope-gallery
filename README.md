@@ -2,7 +2,7 @@
 
 # \<molecule-isotope-gallery\>
 
-> is a webcomponent for displaying a filterable gallery using isotope.js to animage filter transitions
+> is a webcomponent for displaying a filterable gallery using isotope.js to animate filter transitions
 >
 > Polymer 2.0 ready
 
