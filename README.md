@@ -7,15 +7,28 @@
 > Polymer 2.0 ready
 
 ## Usage example
+<!---
+```
+<custom-element-demo>
+  <template>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="molecule-isotope-gallery.html">
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
 ```html
-<molecule-isotope-gallery>
+<molecule-isotope-gallery default-filter="mountain">
   <div slot="tags">
+    <button data-filter="item">All</button>
     <button data-filter="sports">Sports</button>
     <button data-filter="mountain">Mountain</button>
+    <button data-filter="foo">None</button>
   </div>  
-  <img src="demo/images/mountain1.jpg" class="item mountain"/>
-  <img src="demo/images/sports2.jpg" class="item sports"/>
-  <img src="demo/images/mountain3.jpg" class="item mountain"/>
+  <img src="demo/images/mountain1.jpg" width="200" height="150" class="item mountain"/>
+  <img src="demo/images/sports2.jpg" width="200" height="150" class="item sports"/>
+  <img src="demo/images/mountain3.jpg" width="200" height="150" class="item mountain"/>
 </molecule-isotope-gallery>
 ```
 
