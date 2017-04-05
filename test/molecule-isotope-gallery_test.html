@@ -4,25 +4,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>filterable-gallery test</title>
+    <title>molecule-isotope-gallery test</title>
 
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
 
-    <link rel="import" href="../filterable-gallery.html">
+    <link rel="import" href="../molecule-isotope-gallery.html">
   </head>
   <body>
     <test-fixture id="basic">
       <template>
-        <filterable-gallery></filterable-gallery>
+        <molecule-isotope-gallery></molecule-isotope-gallery>
       </template>
     </test-fixture>
 
     <script>
-      suite('filterable-gallery', function() {
+      suite('molecule-isotope-gallery', function() {
         test('instantiating the element works', function() {
           var element = fixture('basic');
-          assert.equal(element.is, 'filterable-gallery');
+          assert.equal(element.is, 'molecule-isotope-gallery');
         });
       });
     </script>

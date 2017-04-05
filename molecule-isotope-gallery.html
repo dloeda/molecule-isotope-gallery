@@ -1,0 +1,116 @@
+<link rel="import" href="../polymer/polymer.html">
+<script src="scripts/isotope.min.js"></script>
+
+<!--
+`molecule-isotope-gallery` is an element for displaying a filterable gallery using
+isotope.js to animage filter transitions. This element can receive in its content
+any tipe of tags or elements to filter (not needed images at all). 
+Examples:
+  Basic, using the function filterItems to filter content by class:
+    
+    <molecule-isotope-gallery>
+      <img src="http://lorempixel.com/100/100" class="item sports mountain"></img>
+      <img src="http://lorempixel.com/100/100"  class="item mountain"></img>
+      <img src="http://lorempixel.com/100/100" class="item sports"></img>
+    </molecule-isotope-gallery>
+
+  Tags included, the element will filter the elements when tag with data-filter attr is clicked:
+
+    <molecule-isotope-gallery>
+      <div class="tags">
+        <paper-button data-filter="sports">Sports</paper-button>
+      </div>
+      <img src="http://lorempixel.com/100/100" class="item sports mountain"></img>
+      <img src="http://lorempixel.com/100/100"  class="item mountain"></img>
+    </molecule-isotope-gallery>
+
+@element molecule-isotope-gallery
+@demo demo/index.html
+-->
+
+<dom-module id="molecule-isotope-gallery">
+  <template>
+    <style>
+      :host {
+        display: block;
+        height: 100%;
+      }
+    </style>
+    <content id="tags" select=".tags"></content>
+    <div id="grid">
+      <content select=".grid"></content>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'molecule-isotope-gallery',
+      properties: {
+        /**
+           * The class of filterable items 
+           */
+          itemClass: {
+            type: String,
+            value: 'item'
+          },
+          /**
+           * The filter used in first instance, by default none
+           */
+          defaultFilter: {
+            type: String
+          },
+          /**
+           * The attribute where tags inform filter
+           */
+          tagAttribute: {
+            type: String,
+            value: 'data-filter'
+          },
+          /**
+           * The filter function, by default class filter 
+           */
+          filter: {
+            type:Function,
+            value: () =>
+              (filter) =>
+                (itemElem) =>
+                  itemElem.classList.contains(filter)
+          }
+      },
+
+      ready: function() {
+        this.grid = new Isotope(this.$.grid.children[0], {
+          itemSelector: '.'+this.itemClass
+        })
+        this.filterItems(this.defaultFilter)
+        this.addEventListener('click', e => {
+          var filter = e.target && e.target.getAttribute(this.tagAttribute)
+          if (filter) {
+            this.filterItems(filter)
+          }
+        })
+      },
+
+      detached: function() {
+        this.removeEventListener('click')
+      },
+
+      /**
+       * @public
+       * @param filter {String} Filter to pass to the filter function,
+       * if empty clear filters
+       * The filter function, by default class filter 
+       */
+      filterItems(filter) {
+        if (filter){
+          this.grid.arrange({
+            filter: this.filter(filter)
+          })
+        } else {
+          this.grid.arrange()
+        }
+      }
+
+    });
+  </script>
+</dom-module>

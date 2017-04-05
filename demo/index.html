@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>filterable-gallery demo</title>
+    <title>molecule-isotope-gallery demo</title>
 
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
 
@@ -12,7 +12,7 @@
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
     <link rel="import" href="../../iron-image/iron-image.html">
     <link rel="import" href="../../paper-button/paper-button.html">
-    <link rel="import" href="../filterable-gallery.html">
+    <link rel="import" href="../molecule-isotope-gallery.html">
 
     <style is="custom-style" include="demo-pages-shared-styles">
     </style>
@@ -49,10 +49,10 @@
       }
     </style>
     <div class="vertical-section-container centered">
-      <h3>Basic filterable-gallery demo</h3>
+      <h3>Basic molecule-isotope-gallery demo</h3>
       <demo-snippet>
         <template>
-          <filterable-gallery default-filter="mountain">
+          <molecule-isotope-gallery default-filter="mountain">
             <div class="tags">
               <paper-button data-filter="item">All</paper-button>
               <paper-button data-filter="sports">Sports</paper-button>
@@ -71,7 +71,7 @@
               <iron-image src="images/sports4.jpg" sizing="cover" class="item sports"></iron-image>
               <iron-image src="images/sports5.jpg" sizing="cover" class="item sports"></iron-image>
             </div>
-          </filterable-gallery>
+          </molecule-isotope-gallery>
         </template>
       </demo-snippet>
     </div>
